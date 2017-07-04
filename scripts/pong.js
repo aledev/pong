@@ -1,10 +1,3 @@
-var animate = window.requestAnimationFrame ||
-  window.webkitRequestAnimationFrame ||
-  window.mozRequestAnimationFrame ||
-  function (callback){
-    window.setTimeout(callback, 1000/60)
-  };
-
 // Constants
 const CURRENT_VERSION = "0.1";
 const MENU_OPTIONS = {
@@ -19,9 +12,18 @@ const GAME_DIFFICULTY = {
 const GAME_CYCLE = {
   START : 1,
   IDLE : 2,
-  PAUSE : 3
+  PAUSE : 3,
+  GAME_OVER : 4
 };
 
+var animate = window.requestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  function (callback){
+    window.setTimeout(callback, 1000/60)
+  };
+
+var currentGameStatus = GAME_CYCLE.START;
 var canvas = document.createElement('canvas');
 var width = 400;
 var height = 600;

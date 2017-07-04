@@ -26,14 +26,30 @@ var difficultyOptions = [{
 
 function Menu(){
   this.currentOption = 1;
-  //context.
+  foreach(var option in menuOptions){
+    option.selected = false;
+  }
+  foreach(var option in difficultyOptions){
+    option.selected = false;
+  }
 }
 
 Menu.prototype.render = function(){
-  context.font = "20px Arial";
-  context.fillText("PONG! v" + CURRENT_VERSION, 150, 20);
+  if(currentGameStatus == GAME_CYCLE.START){
+    context.font = "20px Arial";
+    context.fillText("PONG! v" + CURRENT_VERSION, 150, 20);
+    var startMenu = 200;
+    foreach(var option in menuOptions){
+      context.font = "14px Arial";
+      if(option.selected){
+        context.fillText(option.text, 150, startMenu + 30);
+      }
+      else{
 
-  context.fillText("New Game: " + this.computerScore, 330, 10)
+      }
+      startMenu += 20;
+    }
+  }
 };
 
 Menu.prototype.update = function(){
