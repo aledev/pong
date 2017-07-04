@@ -26,7 +26,7 @@ var difficultyOptions = [{
 
 function Menu(){
   this.currentOption = 1;
-  context.
+  //context.
 }
 
 Menu.prototype.render = function(){
