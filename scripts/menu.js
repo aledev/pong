@@ -45,7 +45,7 @@ Menu.prototype.render = function(){
         context.fillText(option.text, 150, startMenu + 30);
       }
       else{
-
+        // TODO: implementar esta opción
       }
       startMenu += 20;
     }
