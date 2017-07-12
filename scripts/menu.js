@@ -46,6 +46,7 @@ Menu.prototype.render = function(){
       }
       else{
         // TODO: implementar esta opción
+        // Comentario extra prueba
       }
       startMenu += 20;
     }
